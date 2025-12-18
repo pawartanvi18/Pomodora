@@ -1,0 +1,32 @@
+<!DOCTYpE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>timeee</title>
+</head>
+<body>
+    <div class="maindiv">
+        <h1>TIME IT BABYY</h1>
+        <p>STUDY NOW FOR BETTER FUTURE ! :) </p>
+            <img src="pomo.png" alt="Pomodoro Menu">
+            <button id="start-btn">START</button>
+    </div>
+
+    <script>
+        document.getElementById("start-btn").addEventListener("click", () => {
+            window.electronAPI.loadPage("setTask.html");
+        });
+    </script>
+    
+</body>
+</html>
+
+<!-- 
+isme i have to add 
+1. back button 
+2. fix start stop
+
+start break html and js add karna hai which is after stopbreak 
+-->

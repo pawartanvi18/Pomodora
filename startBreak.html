@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>timeee</title>
+</head>
+<body>
+    <div class="takingBreakDiv">
+        <h1>Takeing Break ....</h1>
+        <p id = "task"></p>
+        <p id = "task-remaining"></p>
+        <img src="tomatoSleep.gif" alt = "tomatoSleep"/>
+    </div>
+
+    <script>
+        const taskValue = localStorage.getItem("taskValue") || "No task available";
+        const displayTask = document.getElementById("task");
+
+        if(displayTask){
+            displayTask.textContent = taskValue; //displays task in <P>
+        }
+
+
+        function startCountdown(durationMins){
+            let duration = durationMins * 60 ;
+
+            const displayTime = document.getElementById("time-remaining");
+
+            function updateCountdown(){
+                let minutes = Math.floor(duration / 60);
+                let seconds = duration % 60;
+
+                displayTime.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+                if (duration>0){
+                    duration--
+                }
+                else{
+                    clearInterval(interval);
+                    window.electronAPI.loadPage("stopBreak.html");
+                }
+            }
+
+            updateCountdown();
+            const interval = setInterval(updateCountdown, 1000);
+        }
+
+        window.onload = function () {
+            startCountdown(10);
+        }
+    </script>
+</body>
+</html>

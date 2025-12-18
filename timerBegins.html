@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>timeee</title>
+</head>
+<body>
+    <div class="timerBeginsDiv">
+        <h1> LET'S GOO ! </h1>
+        <p id = "task"> </p>
+        <p id = "time-remaining"></p>
+        <img src = "TomatoWaitFun.gif" alt = "Tomato" />
+        <button id="set-stop-btn" onclick="stopCountDown()">STOP TIMER</button>
+    </div>
+
+    <script>
+        let interval; 
+
+        const taskValue = localStorage.getItem("taskValue") || "No task available";
+        const displayTask = document.getElementById("task")
+
+        if(displayTask){
+            displayTask.textContent = taskValue;  //displays task in p
+        }
+
+        function startCountdown(durationMins){
+            let duration = durationMins * 60 //conversion in secs
+
+            const displayTime = document.getElementById("time-remaining");
+
+            function updateCountdown(){
+                let minutes = Math.floor(duration / 60);
+                let seconds = duration % 60 ;
+
+                displayTime.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+                if(duration > 0 ){
+                    duration -- ;                    
+                }
+                else{
+                    clearInterval(interval);
+                    window.electronAPI.loadPage("stopWork.html");
+                }
+            }
+
+            updateCountdown(); //inital call to avoid 1s delay
+            const interval = setInterval(updateCountdown, 1000)
+        }
+
+        function stopCountDown(){
+            clearInterval(interval);
+            window.electronAPI.loadPage("stopWork.html");
+        }
+        document.getElementById("set-stop-btn").addEventListener("click", stopCountDown)
+        //start 30min countdown when thw pg loads
+        window.onload = function(){
+            startCountdown(25);
+        };
+    </script>
+</body>
+</html>

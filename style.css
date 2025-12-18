@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Sigmar&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Jersey 10';
+    color: white;
+    background-color: #c55c5f;
+}
+
+/* start pg */
+.maindiv{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+
+.maindiv h1{
+    text-align: center;
+    letter-spacing: 12px;
+    font-size: 60px;
+    margin: 16px;
+}
+
+.maindiv p{
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.maindiv img{
+    width: 240px;
+    height: 240px;
+    margin: 24px;
+}
+
+.maindiv #start-btn{
+    font-family: 'Jersey 10';
+    font-size: 40px;
+    padding: 4px 20px;
+    text-align: center;
+    background-color: #c55c5f;
+    color: white;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgb(49, 30, 30);
+}
+
+.maindiv #start-btn:hover{
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+/* Set Task */
+.setTaskDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+
+.setTaskDiv h1{
+    text-align: center;
+    letter-spacing: 12px;
+    font-size: 60px;
+    margin: 16px;
+}
+
+.setTaskDiv img{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+.setTaskDiv p{
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.setTaskDiv #task-value{
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.setTaskDiv #set-timer-btn{
+    font-family: 'Jersey 10';
+    font-size: 40px;
+    padding: 4px 20px;
+    text-align: center;
+    background-color: #c55c5f;
+    color: white;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgb(49, 30, 30);
+}
+
+.setTaskDiv #set-timer-btn:hover{
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+/* timer page */
+.timerBeginsDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+
+.timerBeginsDiv h1{
+    text-align: center;
+    letter-spacing: 12px;
+    font-size: 60px;
+    margin: 16px;
+}
+
+.timerBeginsDiv img{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+.timerBeginsDiv #task{
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.timerBeginsDiv #time-remaining{
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.timerBeginsDiv #set-stop-btn{
+    font-family: 'Jersey 10';
+    font-size: 40px;
+    padding: 4px 20px;
+    text-align: center;
+    background-color: #c55c5f;
+    color: white;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgb(49, 30, 30);
+}
+
+.timerBeginsDiv #set-stop-btn:hover{
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+/*stop work */
+.stopWorkDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+
+.stopWorkDiv h1{
+    text-align: center;
+    letter-spacing: 12px;
+    font-size: 60px;
+    margin: 16px;
+}
+
+.stopWorkDiv #task{
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.stopWorkDiv #time-remaining{
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.stopWorkDiv #start-break-btn{
+    font-family: 'Jersey 10';
+    font-size: 40px;
+    padding: 4px 20px;
+    text-align: center;
+    background-color: #c55c5f;
+    color: white;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgb(49, 30, 30);
+}
+
+.stopWorkDiv #start-break-btn:hover{
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+/* start break page */
+.stopBreakDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+
+.stopBreakDiv h1{
+    text-align: center;
+    letter-spacing: 12px;
+    font-size: 60px;
+    margin: 16px;
+}
+
+.stopBreakDiv img{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+.stopBreakDiv #task{
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.stopBreakDiv #time-remaining{
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+/* stop break page */
+.stopBreakDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+
+.stopBreakDiv h1{
+    text-align: center;
+    letter-spacing: 12px;
+    font-size: 60px;
+    margin: 16px;
+}
+
+.stopBreakDiv #task{
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.stopBreakDiv #time-remaining{
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.stopBreakDiv #start-timer-btn{
+    font-family: 'Jersey 10';
+    font-size: 40px;
+    padding: 4px 20px;
+    text-align: center;
+    background-color: #c55c5f;
+    color: white;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgb(49, 30, 30);
+}
+
+.stopBreakDiv #start-tmer-btn:hover{
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}

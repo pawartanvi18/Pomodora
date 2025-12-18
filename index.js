@@ -1,12 +1,8 @@
-
 const path = require("path");
 const { app, BrowserWindow, ipcMain } = require("electron");
-const fs = require("fs");
-
-let win;
 
 function createWindow() {
-  win = new BrowserWindow({
+  const win = new BrowserWindow({
     width: 550,
     height: 600,
     webPreferences: {
@@ -18,7 +14,7 @@ function createWindow() {
 
   win.removeMenu();
   win.loadFile("index.html");
-  
+  //win.webContents.openDevTools(); //Open the console
   ipcMain.on("load-page", (event, page) => {
     win.loadFile(page);
   });
@@ -26,9 +22,16 @@ function createWindow() {
 
 app.whenReady().then(() => {
   createWindow();
+
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createWindow();
     }
   });
+});
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
 });
